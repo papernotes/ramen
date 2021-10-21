@@ -35,6 +35,16 @@ function App() {
     setLng(lng);
   }
 
+  function createMarkers() {
+    return reviews.map((review, index) => {
+      if (review.lat !== lat && review.lng !== lng) {
+        return <Marker color={'green'} key={index} width={40} anchor={[review.lat, review.lng]}/>
+      } else {
+        return <Marker color={'red'} width={50} anchor={[lat, lng]} />
+      }
+    })
+  }
+
   return (
     <div className="App">
       <div>
@@ -45,13 +55,18 @@ function App() {
           <Col sm={4} style={{backgroundColor: 'beige'}}>
             <ListGroup>
               { reviews.map((review, index) => 
-                <ListGroup.Item onMouseEnter={(e) => {update(review.lat, review.lng)}} key={index}>{review.name}</ListGroup.Item>) 
+                <ListGroup.Item 
+                  onClick={(e) => {update(review.lat, review.lng)}} 
+                  key={index}
+                >
+                  {review.name}
+                </ListGroup.Item>)
               }
             </ListGroup>
           </Col>
           <Col sm={8} style={{height: '100vh'}}>
             <Map height={500} defaultCenter={[lat, lng]} center={[lat, lng]} defaultZoom={10}>
-              <Marker width={50} anchor={[lat, lng]} />
+              {createMarkers()}
               <ZoomControl/>
             </Map>
           </Col>
