@@ -13,12 +13,14 @@ import ramenYaml from './ramen.yml';
  * 
  * name
  * rank
- * review
+ * text
  */
 function App() {
   const [lat, setLat] = useState(37.3966639);
   const [lng, setLng] = useState(-121.97524799999998);
   const [reviews, setReviews] = useState([])
+  const [name, setName] = useState('')
+  const [text, setText] = useState('Thanks for coming through, check the list on the left')
   
   useEffect(() => {
     if (reviews.length === 0) {
@@ -30,9 +32,10 @@ function App() {
     }
   }, [reviews]);
 
-  function update(lat, lng) {
+  function update(name, lat, lng) {
     setLat(lat);
     setLng(lng);
+    setName(name);
   }
 
   function createMarkers() {
@@ -40,7 +43,7 @@ function App() {
       if (review.lat !== lat && review.lng !== lng) {
         return <Marker color={'green'} key={index} width={40} anchor={[review.lat, review.lng]}/>
       } else {
-        return <Marker color={'red'} width={50} anchor={[lat, lng]} />
+        return <Marker color={'red'} key={index} width={50} anchor={[lat, lng]} />
       }
     })
   }
@@ -52,11 +55,11 @@ function App() {
       </div>
       <Container>
         <Row>
-          <Col sm={4} style={{backgroundColor: 'beige'}}>
-            <ListGroup>
+          <Col sm={4} style={{maxHeight: '75vh'}}>
+            <ListGroup style={{maxHeight: '100%', overflow: 'scroll'}}>
               { reviews.map((review, index) => 
                 <ListGroup.Item 
-                  onClick={(e) => {update(review.lat, review.lng)}} 
+                  onClick={(e) => {update(review.name, review.lat, review.lng); setText(review.text)}}
                   key={index}
                 >
                   {review.name}
@@ -64,11 +67,13 @@ function App() {
               }
             </ListGroup>
           </Col>
-          <Col sm={8} style={{height: '100vh'}}>
-            <Map height={500} defaultCenter={[lat, lng]} center={[lat, lng]} defaultZoom={10}>
+          <Col sm={8} style={{height: '100%'}}>
+            <Map height={500} defaultCenter={[lat, lng]} center={[lat, lng]} defaultZoom={12}>
               {createMarkers()}
               <ZoomControl/>
             </Map>
+            <h1>{name}</h1>
+            <p>{text}</p>
           </Col>
         </Row>
       </Container>

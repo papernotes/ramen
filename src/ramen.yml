@@ -1,31 +1,141 @@
 ---
 - name: "hiro nori"
   rank: 1
-  review: "v good"
+  text: "My current best in the bay. Get the black garlic oil on the side and use your chopsticks to dip it a bit into your bowl"
   lat: 37.3966639
   lng: -121.97524799999998
+- name: "taishoken"
+  rank: 1
+  text: "I waited 3 hours for the tsukemen and it was great. My hunger probably boosted this review, but I thought it was absolutely great. Dipping broth could be warmer, but still good. Potato Salad and Jalapeno Pepper appetizers were pretty good"
+  lat: 37.5633138
+  lng: -122.326293
+- name: "rokurinsha"
+  rank: 1
+  text: "The bibs are cool"
+  lat: 35.6298124
+  lng: 139.7009997
 - name: "menya ultra"
   rank: 1
-  review: "my favorite in socal"
+  text: "Drinking the broth is like drinking chashu. Really strong flavor, my favorite in socal"
   lat: 32.9158623
   lng: -117.14746269999999
 - name: "tsuta ramen"
   rank: 2
-  review: "go for it"
+  text: "Got the Ajitama Chashu Shoyu Ramen. Would go back and try different things again"
   lat: 37.78424947731903
   lng: -122.40326107440708
 - name: "rakiraki"
   rank: 2
-  review: "I like the black garlic noodle"
+  text: "I like the black garlic noodle"
   lat: 32.9191153
   lng: -117.1291224
+- name: "mensho tokyo sf"
+  rank: 2
+  text: "Got the Tori Paitan Double Chashu. Pretty good, thick noodles, really flavorful, thick chicken broth. Would come back and try the rest of their menu"
+  lat: 37.7867301
+  lng: -122.4165277
+- name: "hinodeya ramen bar"
+  rank: 2
+  text: "Pretty good, got the vegan creamy ramen. Would come back to try other things again"
+  lat: 37.790419
+  lng: -122.4260143
+- name: "afuri ramen"
+  rank: 2
+  text: "Good, would recommend, but I think the base came with only one piece of chashu. Egg was good, comes with green onion. Added garlic chips"
+  lat: 45.5191837
+  lng: -122.6704042
+- name: "daikokuya"
+  rank: 2
+  text: "Good. Their salad dressing is also really good for some reason"
+  lat: 34.0503996
+  lng: -118.3867264
+- name: "nishiki"
+  rank: 2
+  text: "Not bad, try it out. I liked the Black Smoke Bomb"
+  lat: 32.7700108
+  lng: -117.148353
+- name: "ramen nagi"
+  rank: 3
+  text: "Got the Black King bowl. Noodles were whatever, I thought broth could be stronger, egg was ok, ground por was great, pork belly ok. Not bad"
+  lat: 37.3852543
+  lng: -122.1238848
+- name: "tajima"
+  rank: 3
+  text: "It's ok"
+  lat: 32.7700205
+  lng: -117.1483529
+- name: "waraku"
+  rank: 3
+  text: "Got the Black Tonkotsu. A bit heavy, but alright, solid"
+  lat: 37.7859001
+  lng: -122.4309695
+- name: "marufuku ramen"
+  rank: 3
+  text: "Got the Deluxe. It's solid, not amazing or anything"
+  lat: 37.7440286
+  lng: -122.4907561
 - name: "ippudo"
   rank: 3
-  review: ""
+  text: "Solid"
   lat: 37.786232977319024
   lng: -122.40420076829515
+- name: "orenchi beyond"
+  rank: 3
+  text: "Better than average, better than the original Orenchi, but not too surpising or anything"
+  lat: 37.7703493
+  lng: -122.4249638
+- name: "yugen ramen"
+  rank: 3
+  text: "Ok"
+  lat: 37.3946524
+  lng: -122.0785008
+- name: "fumi ramen"
+  rank: 3
+  text: "I didn't get ramen but the katsu curry stuff was good lol. I'll have to try the ramen next time"
+  lat: 37.7440494
+  lng: -122.422905
+- name: "jinya ramen"
+  rank: 3
+  text: "Surprisingly decent, but they're permanently closed now"
+  lat: 37.6956455
+  lng: -121.8525278
+- name: "tenkaippin"
+  rank: 3
+  text: "Not bad, good"
+  lat: 21.2788065
+  lng: -157.8159706
+- name: "kikanbo"
+  rank: 3
+  text: "Whatever, just ok, but I'm not good with eating spicy food, which is what they're known for (numbing/burning spice)"
+  lat: 35.7114106
+  lng: 139.7263476
+- name: "tsujita"
+  rank: 3
+  text: "Ok, was salty for me"
+  lat: 35.6825127
+  lng: 139.7694829
+- name: "marugame monzo - la"
+  rank: 4
+  text: "Not a great portion, taste is good, but I probably won't go back to this location"
+  lat: 34.0499426
+  lng: -118.2422367
+- name: "cocolo ramen bar x-berg"
+  rank: 4
+  text: "whatever"
+  lat: 52.4938239
+  lng: 13.4158386
+- name: "ramen nakamura"
+  rank: 4
+  text: "meh"
+  lat: 21.2812749
+  lng: -157.8306066
+- name: "santouka"
+  rank: 4
+  text: "tbh, nothing special. Chashu bleh, roe ok, salmon ok. Overpriced for what it is imo"
+  lat: 37.3150592
+  lng: -121.9801364
 - name: "orenchi (mountain view)"
   rank: 4
-  review: ""
+  text: "I got a large bowl of diluted ramen"
   lat: 37.33652697731903
   lng: -121.99393063874695
