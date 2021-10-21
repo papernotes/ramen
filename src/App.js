@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Map, Marker } from "pigeon-maps"
 
 function App() {
+  const [lat, setLat] = useState(50.879);
+  const [lng, setLng] = useState(4.6997);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <p>Hello</p>
+      </div>
+      <Container>
+        <Row>
+          <Col sm={4} style={{backgroundColor: 'blue'}}>
+            List
+          </Col>
+          <Col sm={8} style={{height: '100vh'}}>
+            <Map height={500} defaultCenter={[lat, lng]} defaultZoom={11}>
+              <Marker width={50} anchor={[lat, lng]} />
+            </Map>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
