@@ -2,23 +2,54 @@ import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 function RamenList(props) {
-    const reviews = props.reviews;
+    let reviews = props.reviews;
     const update = props.update;
     const setText = props.setText;
+    let categories = {1: [], 2: [], 3: [], 4:[]};
 
-    return (
-        <ListGroup style={{maxHeight: '100%', overflow: 'scroll'}} variant='flush'>
-        { reviews.map((review, index) => 
-          <ListGroup.Item 
-            action
-            onClick={() => {update(review.name, review.lat, review.lng); setText(review.text)}}
-            href={`#${index}`}
-            key={index}
-          >
-            {review.name}
-          </ListGroup.Item>)
+    function getHeader(ranking) {
+        switch(ranking) {
+            case '1':
+                return 'Yes';
+            case '2':
+                return 'Try it';
+            case '3':
+                return 'Not bad';
+            default:
+                return 'Nah'
         }
-      </ListGroup>
+    }
+
+    function generateListGroup(reviews, ranking) {
+        const filtered = reviews.filter(review => review.rank.toString() === ranking);
+        const header = getHeader(ranking);
+
+        return(
+            <div key={ranking}>
+                <h2>{header}</h2>
+                <ListGroup variant='flush'>
+                    { filtered.map((review, index) =>
+                    <ListGroup.Item
+                        action
+                        onClick={() => {update(review.name, review.lat, review.lng); setText(review.text)}}
+                        key={index}
+                    >
+                        {review.name}
+                    </ListGroup.Item>)
+                    }
+                </ListGroup>
+            </div>
+        )
+    }
+
+    function generateFullList(reviews) {
+        reviews.forEach(review => categories[review.rank].push(review));
+        return Object.keys(categories).map((key) => generateListGroup(categories[key], key));
+    }
+    return (
+        <div style={{maxHeight: '100%', overflow: 'scroll'}} >
+            {generateFullList(reviews)}
+        </div>
     )
 }
 
