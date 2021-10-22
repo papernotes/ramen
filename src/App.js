@@ -32,18 +32,30 @@ function App() {
     }
   }, [reviews]);
 
-  function update(name, lat, lng) {
+  function update(name, lat, lng, txt) {
     setLat(lat);
     setLng(lng);
     setName(name);
+    setText(txt);
   }
 
-  function createMarkers() {
-    return reviews.map((review, index) => {
+  function createMarkers(revs) {
+    return revs.map((review, index) => {
       if (review.lat !== lat && review.lng !== lng) {
-        return <Marker color={'green'} key={index} width={40} anchor={[review.lat, review.lng]}/>
+        return <Marker
+          onClick={() => update(review.name, review.lat, review.lng, review.text)}
+          color={'green'}
+          key={index}
+          width={40}
+          anchor={[review.lat, review.lng]}
+        />
       } else {
-        return <Marker color={'red'} key={index} width={50} anchor={[lat, lng]} />
+        return <Marker
+          color={'red'}
+          key={index}
+          width={50}
+          anchor={[lat, lng]}
+        />
       }
     })
   }
@@ -56,10 +68,12 @@ function App() {
       <Container>
         <Row>
           <Col sm={4} style={{maxHeight: '75vh'}}>
-            <ListGroup style={{maxHeight: '100%', overflow: 'scroll'}}>
+            <ListGroup style={{maxHeight: '100%', overflow: 'scroll'}} variant='flush'>
               { reviews.map((review, index) => 
                 <ListGroup.Item 
+                  action
                   onClick={(e) => {update(review.name, review.lat, review.lng); setText(review.text)}}
+                  href={`#${index}`}
                   key={index}
                 >
                   {review.name}
@@ -69,7 +83,7 @@ function App() {
           </Col>
           <Col sm={8} style={{height: '100%'}}>
             <Map height={500} defaultCenter={[lat, lng]} center={[lat, lng]} defaultZoom={12}>
-              {createMarkers()}
+              {createMarkers(reviews)}
               <ZoomControl/>
             </Map>
             <h1>{name}</h1>
