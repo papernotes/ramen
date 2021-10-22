@@ -15,9 +15,12 @@ import ramenYaml from './ramen.yml';
  * rank
  * text
  */
+
 function App() {
-  const [lat, setLat] = useState(37.3966639);
-  const [lng, setLng] = useState(-121.97524799999998);
+  const DEFAULT_LAT = 37.4550383;
+  const DEFAULT_LNG = -122.0488537;
+  const [lat, setLat] = useState(DEFAULT_LAT);
+  const [lng, setLng] = useState(DEFAULT_LNG);
   const [reviews, setReviews] = useState([])
   const [name, setName] = useState('')
   const [text, setText] = useState('Thanks for coming through, check the list on the left')
@@ -82,7 +85,7 @@ function App() {
             </ListGroup>
           </Col>
           <Col sm={8} style={{height: '100%'}}>
-            <Map height={500} defaultCenter={[lat, lng]} center={[lat, lng]} defaultZoom={12}>
+            <Map height={500} defaultCenter={[DEFAULT_LAT, DEFAULT_LNG]} center={[lat, lng]} defaultZoom={12}>
               {createMarkers(reviews)}
               <ZoomControl/>
             </Map>
