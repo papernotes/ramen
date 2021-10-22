@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ListGroup from 'react-bootstrap/ListGroup';
 import { Map, Marker, ZoomControl } from "pigeon-maps";
+import RamenList from './RamenList';
 
 import yaml from 'js-yaml';
 import ramenYaml from './ramen.yml';
@@ -71,18 +71,7 @@ function App() {
       <Container>
         <Row>
           <Col sm={4} style={{maxHeight: '75vh'}}>
-            <ListGroup style={{maxHeight: '100%', overflow: 'scroll'}} variant='flush'>
-              { reviews.map((review, index) => 
-                <ListGroup.Item 
-                  action
-                  onClick={(e) => {update(review.name, review.lat, review.lng); setText(review.text)}}
-                  href={`#${index}`}
-                  key={index}
-                >
-                  {review.name}
-                </ListGroup.Item>)
-              }
-            </ListGroup>
+            <RamenList reviews={reviews} update={update} setText={setText}/>
           </Col>
           <Col sm={8} style={{height: '100%'}}>
             <Map height={500} defaultCenter={[DEFAULT_LAT, DEFAULT_LNG]} center={[lat, lng]} defaultZoom={12}>
