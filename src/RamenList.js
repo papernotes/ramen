@@ -28,14 +28,18 @@ function RamenList(props) {
             <div key={ranking}>
                 <h2>{header}</h2>
                 <ListGroup variant='flush'>
-                    { filtered.map((review, index) =>
-                    <ListGroup.Item
-                        action
-                        onClick={() => {update(review.name, review.lat, review.lng); setText(review.text)}}
-                        key={index}
-                    >
-                        {review.name}
-                    </ListGroup.Item>)
+                    {
+                        filtered
+                            .sort((review_a, review_b) => review_a.name.localeCompare(review_b.name))
+                            .map((review, index) =>
+                                <ListGroup.Item
+                                    action
+                                    onClick={() => {update(review.name, review.lat, review.lng); setText(review.text)}}
+                                    key={index}
+                                >
+                                    {review.name}
+                                </ListGroup.Item>
+                            )
                     }
                 </ListGroup>
             </div>
