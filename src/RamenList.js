@@ -14,7 +14,7 @@ function RamenList(props) {
             case '2':
                 return 'Try it';
             case '3':
-                return 'Not bad';
+                return "It's aite";
             default:
                 return 'Nah'
         }

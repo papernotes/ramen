@@ -19,11 +19,13 @@ import ramenYaml from './ramen.yml';
 function App() {
   const DEFAULT_LAT = 37.4550383;
   const DEFAULT_LNG = -122.0488537;
+  const STARTING_TEXT = 'Thanks for coming through. Check the list on the left and the FAQ'
+
   const [lat, setLat] = useState(DEFAULT_LAT);
   const [lng, setLng] = useState(DEFAULT_LNG);
-  const [reviews, setReviews] = useState([])
-  const [name, setName] = useState('')
-  const [text, setText] = useState('Thanks for coming through, check the list on the left')
+  const [reviews, setReviews] = useState([]);
+  const [name, setName] = useState('');
+  const [text, setText] = useState(STARTING_TEXT);
   
   useEffect(() => {
     if (reviews.length === 0) {
