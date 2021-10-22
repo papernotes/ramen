@@ -5,8 +5,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import RamenList from './RamenList';
 import RamenMap from './RamenMap';
-import yaml from 'js-yaml';
+import Faq from './Faq';
 import ramenYaml from './ramen.yml';
+import yaml from 'js-yaml';
 
 function App() {
   const DEFAULT_LAT = 37.4550383;
@@ -18,6 +19,7 @@ function App() {
   const [reviews, setReviews] = useState([]);
   const [name, setName] = useState('');
   const [text, setText] = useState(STARTING_TEXT);
+  const [faqActive, setFaqActive] = useState(false);
   
   useEffect(() => {
     if (reviews.length === 0) {
@@ -27,7 +29,7 @@ function App() {
         setReviews(yaml.load(text));
       })
     }
-  }, [reviews]);
+  }, [reviews, faqActive]);
 
   function update(name, lat, lng, txt) {
     setLat(lat);
@@ -38,27 +40,43 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <p>Header TODO</p>
-      </div>
       <Container>
         <Row>
-          <Col sm={4} style={{maxHeight: '75vh'}}>
-            <RamenList reviews={reviews} update={update} setText={setText}/>
+          <Col>
+            <h2>jon's ramen / noodle list</h2>
           </Col>
-          <Col sm={8} style={{height: '100%'}}>
-            <RamenMap
-              reviews={reviews}
-              defaultCenter={[DEFAULT_LAT, DEFAULT_LNG]}
-              lat={lat}
-              lng={lng}
-              update={update}
-            />
-            <h1>{name}</h1>
-            <p>{text}</p>
+          <Col xs={4}></Col>
+          <Col>
+            <button onClick={() => setFaqActive(true)}>faq</button>
           </Col>
         </Row>
       </Container>
+      { faqActive &&
+        <div>
+          <Faq/>
+          <button onClick={() => setFaqActive(false)}>Back</button>
+        </div>
+      }
+      { !faqActive &&
+        <Container>
+          <Row>
+            <Col sm={4} style={{maxHeight: '75vh'}}>
+              <RamenList reviews={reviews} update={update} setText={setText}/>
+            </Col>
+            <Col sm={8} style={{height: '100%'}}>
+              <RamenMap
+                reviews={reviews}
+                defaultCenter={[DEFAULT_LAT, DEFAULT_LNG]}
+                lat={lat}
+                lng={lng}
+                update={update}
+              />
+              <h1>{name}</h1>
+              <p>{text}</p>
+            </Col>
+          </Row>
+        </Container>
+      }
     </div>
   );
 }
