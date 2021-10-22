@@ -3,18 +3,10 @@ import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Map, Marker, ZoomControl } from "pigeon-maps";
 import RamenList from './RamenList';
-
+import RamenMap from './RamenMap';
 import yaml from 'js-yaml';
 import ramenYaml from './ramen.yml';
-
-/**
- * 
- * name
- * rank
- * text
- */
 
 function App() {
   const DEFAULT_LAT = 37.4550383;
@@ -44,27 +36,6 @@ function App() {
     setText(txt);
   }
 
-  function createMarkers(revs) {
-    return revs.map((review, index) => {
-      if (review.lat !== lat && review.lng !== lng) {
-        return <Marker
-          onClick={() => update(review.name, review.lat, review.lng, review.text)}
-          color={'green'}
-          key={index}
-          width={40}
-          anchor={[review.lat, review.lng]}
-        />
-      } else {
-        return <Marker
-          color={'red'}
-          key={index}
-          width={50}
-          anchor={[lat, lng]}
-        />
-      }
-    })
-  }
-
   return (
     <div className="App">
       <div>
@@ -76,10 +47,13 @@ function App() {
             <RamenList reviews={reviews} update={update} setText={setText}/>
           </Col>
           <Col sm={8} style={{height: '100%'}}>
-            <Map height={500} defaultCenter={[DEFAULT_LAT, DEFAULT_LNG]} center={[lat, lng]} defaultZoom={12}>
-              {createMarkers(reviews)}
-              <ZoomControl/>
-            </Map>
+            <RamenMap
+              reviews={reviews}
+              defaultCenter={[DEFAULT_LAT, DEFAULT_LNG]}
+              lat={lat}
+              lng={lng}
+              update={update}
+            />
             <h1>{name}</h1>
             <p>{text}</p>
           </Col>
