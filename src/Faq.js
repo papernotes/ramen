@@ -3,6 +3,11 @@ import React from 'react';
 function Faq() {
     return(
         <div>
+            <br/>
+            <p>As a heads up, I do like strong-flavored broths. A good egg will help.</p>
+            <p>I usually check things out like: broth &gt; noodles &gt; egg &gt; chashu &gt; rest</p>
+            <hr style={{width: '50vw', margin: 'auto'}}/>
+            <br/>
             <h3>What does "aite" mean?</h3>
             <p>It's good, it's alright, but I won't seek it out. I won't mind eating here though</p>
             <h3>What does "yes" mean?</h3>

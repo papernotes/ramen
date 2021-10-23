@@ -16,7 +16,7 @@ import yaml from 'js-yaml';
 function App() {
   const DEFAULT_LAT = 37.4550383;
   const DEFAULT_LNG = -122.0488537;
-  const STARTING_TEXT = 'Thanks for coming through. Check the list on the left and the FAQ'
+  const STARTING_TEXT = 'Thanks for coming through. Check the list on the left and the FAQ.\nIf you find yourself liking the places I like, maybe this list is for you.'
 
   const [lat, setLat] = useState(DEFAULT_LAT);
   const [lng, setLng] = useState(DEFAULT_LNG);
@@ -69,7 +69,7 @@ function App() {
       { faqActive &&
         <div>
           <Faq/>
-          <Button onClick={() => setFaqActive(false)}>Back</Button>
+          <Button variant='dark' onClick={() => setFaqActive(false)}>Back</Button>
         </div>
       }
       { !faqActive &&
@@ -86,8 +86,10 @@ function App() {
                 lng={lng}
                 update={update}
               />
-              <h1>{name}</h1>
-              <p>{text}</p>
+              <div style={{whiteSpace:'break-spaces'}}>
+                <h1>{name}</h1>
+                <p>{text}</p>
+              </div>
             </Col>
           </Row>
         </Container>
