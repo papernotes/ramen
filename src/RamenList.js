@@ -5,7 +5,7 @@ function RamenList(props) {
     let reviews = props.reviews;
     const update = props.update;
     const setText = props.setText;
-    let categories = {1: [], 2: [], 3: [], 4:[]};
+    let categories = {1: [], 2: [], 3: [], 4:[], 5: []};
 
     function getHeader(ranking) {
         switch(ranking) {
@@ -15,8 +15,10 @@ function RamenList(props) {
                 return 'Try it';
             case '3':
                 return "It's aite";
-            default:
+            case '4':
                 return 'Nah'
+            default:
+                return "haven't been yet"
         }
     }
 
@@ -50,6 +52,7 @@ function RamenList(props) {
         reviews.forEach(review => categories[review.rank].push(review));
         return Object.keys(categories).map((key) => generateListGroup(categories[key], key));
     }
+
     return (
         <div style={{maxHeight: '100%', overflow: 'scroll'}} >
             {generateFullList(reviews)}

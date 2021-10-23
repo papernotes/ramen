@@ -9,6 +9,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import RamenList from './RamenList';
 import RamenMap from './RamenMap';
 import Faq from './Faq';
+
 import ramenYaml from './ramen.yml';
 import yaml from 'js-yaml';
 

@@ -1,7 +1,7 @@
 ---
 - name: "hiro nori"
   rank: 1
-  text: "My current best in the bay. Get the black garlic oil on the side and use your chopsticks to dip it a bit into your bowl"
+  text: "My current best in the bay. Tried the Tonkotsu + Shoyu chicken-based broth bowls. Both are good. Black garlic oil + Tonkotsu = p gud"
   lat: 37.3966639
   lng: -121.97524799999998
 - name: "taishoken"
@@ -139,3 +139,38 @@
   text: "I got a large bowl of diluted ramen"
   lat: 37.33652697731903
   lng: -121.99393063874695
+- name: 'ippudo cupertino'
+  rank: 3
+  text: 'Same as the other ippudo'
+  lat: 37.3246322
+  lng: -122.0129433
+- name: 'himawari'
+  rank: 5
+  text: "haven't been yet"
+  lat: 37.5657502
+  lng: -122.3258747
+- name: 'ajisen ramen'
+  rank: 5
+  text: "haven't been yet"
+  lat: 37.7837637
+  lng: -122.4092529
+- name: 'jika ramen'
+  rank: 5
+  text: "haven't been yet"
+  lat: 37.7753216
+  lng: -122.487664
+- name: 'nojo ramen'
+  rank: 5
+  text: "haven't been yet"
+  lat: 37.7767268
+  lng: -122.4236651
+- name: 'kan ramen'
+  rank: 5
+  text: "haven't been yet"
+  lat: 37.7972867
+  lng: -122.4083282
+- name: 'shin mai ramen'
+  rank: 5
+  text: "haven't been yet"
+  lat: 37.8081793
+  lng: -122.2749579
