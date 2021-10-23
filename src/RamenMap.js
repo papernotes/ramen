@@ -39,7 +39,7 @@ function RamenMap(props) {
       }
 
     return (
-        <Map height={400} defaultCenter={defaultCenter} center={[lat, lng]} defaultZoom={10}>
+        <Map height={400} defaultCenter={defaultCenter} center={[lat, lng]} defaultZoom={12}>
             {createMarkers(reviews)}
             <ZoomControl/>
         </Map>

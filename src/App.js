@@ -14,8 +14,8 @@ import ramenYaml from './ramen.yml';
 import yaml from 'js-yaml';
 
 function App() {
-  const DEFAULT_LAT = 37.4550383;
-  const DEFAULT_LNG = -122.0488537;
+  const DEFAULT_LAT = 37.7649439;
+  const DEFAULT_LNG = -122.4640632;
   const STARTING_TEXT = 'Thanks for coming through. Check the list on the left and the FAQ.\nIf you find yourself liking the places I like, maybe this list is for you.'
 
   const [lat, setLat] = useState(DEFAULT_LAT);
