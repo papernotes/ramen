@@ -60,7 +60,7 @@ function App() {
       { !faqActive &&
         <Container>
           <Row>
-            <Col sm={4} style={{maxHeight: '75vh'}}>
+            <Col sm={4} style={{maxHeight: '80vh'}}>
               <RamenList reviews={reviews} update={update} setText={setText}/>
             </Col>
             <Col sm={8} style={{height: '100%'}}>
