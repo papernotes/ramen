@@ -13,7 +13,7 @@ function Faq() {
             <h3>What does "yes" mean?</h3>
             <p>I'll say yes to going there every time</p>
             <h3>What does "try it" mean?</h3>
-            <p>Try it out. There's something here that I liked but didn't make the "yes" category.</p>
+            <p>Try it out. There's something here that I liked. I won't mind eating here too.</p>
             <h3>What does "nah" mean?</h3>
             <p>I'd prefer eating some place else.</p>
             <h3>Should I never eat at the "Nah" section?</h3>
