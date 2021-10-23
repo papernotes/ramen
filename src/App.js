@@ -41,12 +41,20 @@ function App() {
     setText(txt);
   }
 
+  function reset() {
+    setFaqActive(false);
+    setName('');
+    setText(STARTING_TEXT);
+    setLat(DEFAULT_LAT);
+    setLng(DEFAULT_LNG);
+  }
+
   return (
     <div className="App">
       <Navbar>
         <Container>
           <Navbar.Brand>
-            <div onClick={() => setFaqActive(false)}>
+            <div onClick={() => reset()}>
               <h2>jon's ramen list</h2>
             </div>
           </Navbar.Brand>
