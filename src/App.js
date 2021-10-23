@@ -1,8 +1,11 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Navbar from 'react-bootstrap/Navbar';
+
 import RamenList from './RamenList';
 import RamenMap from './RamenMap';
 import Faq from './Faq';
@@ -40,25 +43,28 @@ function App() {
 
   return (
     <div className="App">
-      <Container>
-        <Row>
-          <Col>
-            <h2>jon's ramen / noodle list</h2>
-          </Col>
-          <Col xs={4}></Col>
-          <Col>
-            <button onClick={() => setFaqActive(true)}>faq</button>
-          </Col>
-        </Row>
-      </Container>
+      <Navbar>
+        <Container>
+          <Navbar.Brand>
+            <div onClick={() => setFaqActive(false)}>
+              <h2>jon's ramen list</h2>
+            </div>
+          </Navbar.Brand>
+          <Navbar.Collapse className="justify-content-end">
+            <div onClick={() => setFaqActive(true)}>
+              <h3>faq</h3>
+            </div>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
       { faqActive &&
         <div>
           <Faq/>
-          <button onClick={() => setFaqActive(false)}>Back</button>
+          <Button onClick={() => setFaqActive(false)}>Back</Button>
         </div>
       }
       { !faqActive &&
-        <Container>
+        <Container style={{maxWidth: '85vw'}}>
           <Row>
             <Col sm={4} style={{maxHeight: '80vh'}}>
               <RamenList reviews={reviews} update={update} setText={setText}/>
