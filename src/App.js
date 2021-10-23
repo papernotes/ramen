@@ -69,7 +69,7 @@ function App() {
       { faqActive &&
         <div>
           <Faq/>
-          <Button variant='dark' onClick={() => setFaqActive(false)}>Back</Button>
+          <Button variant='dark' onClick={() => reset()}>Back</Button>
         </div>
       }
       { !faqActive &&

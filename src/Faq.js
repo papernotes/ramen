@@ -17,7 +17,7 @@ function Faq() {
             <h3>What does "nah" mean?</h3>
             <p>I'd prefer eating some place else.</p>
             <h3>Should I never eat at the "Nah" section?</h3>
-            <p>No, you should still try it all. I'd be willing to "review" places again</p>
+            <p>No, you should still try it all. I'd be willing to eat at these places eventually</p>
             <h3>How can you put RAMEN_PLACE in CATEGORY?!?</h3>
             <p>My bad, ignore that one</p>
         </div>
