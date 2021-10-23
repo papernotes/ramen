@@ -10,7 +10,7 @@ function RamenMap(props) {
 
     function createMarkers(revs) {
         return revs.map((review, index) => {
-          if (review.rank.toString() == '5') {
+          if (review.rank.toString() === '5') {
             return <Marker
               onClick={() => update(review.name, review.lat, review.lng, review.text)}
               color={'gray'}
