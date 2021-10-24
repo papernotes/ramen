@@ -11,8 +11,9 @@ function App() {
     <div className="App">
       <Toolbar/>
       <Routes>
-        <Route path="/ramen/" element={<Home/>}/>
-        <Route path="/ramen/faq" element={<Faq/>}/>
+        <Route path='*' element={<Home/>}/>
+        <Route exact path="/ramen" element={<Home/>}/>
+        <Route exact path="/faq" element={<Faq/>}/>
       </Routes>
     </div>
   );

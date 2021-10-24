@@ -22,7 +22,7 @@ function Faq() {
             <p>No, you should still try it all. I'd be willing to go back to these places eventually.</p>
             <h4>How can you put RAMEN_PLACE in CATEGORY?!?</h4>
             <p>My bad, ignore that one.</p>
-            <Link to='/ramen/'>home</Link>
+            <Link to='/ramen'>home</Link>
         </div>
     )
 }
