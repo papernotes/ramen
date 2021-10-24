@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Faq() {
     return(
         <div>
             <br/>
-            <p>As a heads up, I do like strong-flavored broths. A good egg will help.</p>
-            <p>I usually check things out like: broth &gt; noodles &gt; egg &gt; chashu &gt; rest</p>
+            <p>As a heads up, I do like strong/rich broths. A good egg will help.</p>
+            <p>I usually check things out like: broth &gt; noodles &gt; chashu &gt; egg &gt; rest</p>
             <hr style={{width: '50vw', margin: 'auto'}}/>
             <br/>
             <h3>What does "aite" mean?</h3>
@@ -20,6 +21,7 @@ function Faq() {
             <p>No, you should still try it all. I'd be willing to eat at these places eventually</p>
             <h3>How can you put RAMEN_PLACE in CATEGORY?!?</h3>
             <p>My bad, ignore that one</p>
+            <Link to='/'>Back</Link>
         </div>
     )
 }
