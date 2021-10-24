@@ -16,7 +16,7 @@ function Home() {
     const [lat, setLat] = useState(DEFAULT_LAT);
     const [lng, setLng] = useState(DEFAULT_LNG);
     const [reviews, setReviews] = useState([]);
-    const [name, setName] = useState('');
+    const [name, setName] = useState('hi');
     const [text, setText] = useState(STARTING_TEXT);
     
     useEffect(() => {

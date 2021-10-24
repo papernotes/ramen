@@ -8,12 +8,12 @@ function Toolbar() {
         <Navbar>
         <Container>
           <Navbar.Brand>
-              <Link to='/'>
+              <Link style={{textDecoration: 'none'}} to='/'>
                 <h2>jon's ramen list</h2>
               </Link>
           </Navbar.Brand>
           <Navbar.Collapse className="justify-content-end">
-              <Link to='/faq'>
+              <Link style={{textDecoration: 'none'}} to='/faq'>
                 <h3>faq</h3>
               </Link>
           </Navbar.Collapse>

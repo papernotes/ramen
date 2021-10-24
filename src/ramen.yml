@@ -1,7 +1,7 @@
 ---
 - name: "hiro nori"
   rank: 1
-  text: "My current best in the bay. Tried the Tonkotsu + Shoyu chicken-based broth bowls.\nBoth are good. Black garlic oil + Tonkotsu = p gud"
+  text: "My current best in the bay. Tried the Tonkotsu + Shoyu + Vegan bowls.\nTonkotsu + Shoyu are good, Vegan is alright.\nBlack garlic oil + Tonkotsu = p gud"
   lat: 37.3966639
   lng: -121.97524799999998
 - name: "taishoken"
@@ -11,12 +11,12 @@
   lng: -122.326293
 - name: "rokurinsha"
   rank: 1
-  text: "The bibs are cool"
+  text: "The bibs are cool. It's good."
   lat: 35.6298124
   lng: 139.7009997
 - name: "menya ultra"
   rank: 1
-  text: "Drinking the broth is like drinking chashu. Really strong flavor, my favorite in socal"
+  text: "Drinking the broth is like drinking chashu. Really strong/rich flavor, my favorite in socal"
   lat: 32.9158623
   lng: -117.14746269999999
 - name: "tsuta ramen"
