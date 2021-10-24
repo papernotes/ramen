@@ -1,0 +1,8 @@
+{
+  "short_name": "jon's ramen list",
+  "name": "jon's ramen list",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
