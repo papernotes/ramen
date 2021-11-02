@@ -12,7 +12,7 @@ import yaml from 'js-yaml';
 function Home() {
     const DEFAULT_LAT = 37.7649439;
     const DEFAULT_LNG = -122.4640632;
-    const STARTING_TEXT = 'Thanks for coming through. Check the list on the left and the FAQ.\nIf you find yourself liking the places I like, maybe this list is for you.'
+    const STARTING_TEXT = 'Thanks for coming through. Check out the ramen list and the FAQ.\nIf you find yourself liking the places I like, maybe this list is for you.'
   
     const [lat, setLat] = useState(DEFAULT_LAT);
     const [lng, setLng] = useState(DEFAULT_LNG);
@@ -51,6 +51,9 @@ function Home() {
             </Col>
           </Row>
           <Row>
+            <div style={{textAlign: 'left'}}>
+              <h2>ramen list</h2>
+            </div>
             <Col sm={4} style={{width: '100%', height: '40vh'}}>
                 <RamenList reviews={reviews} update={update} setText={setText}/>
             </Col>
