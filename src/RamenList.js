@@ -28,7 +28,9 @@ function RamenList(props) {
 
         return(
             <div key={ranking}>
-                <h2>{header}</h2>
+                <div style={{textAlign: 'left'}}>
+                    <h2>{header}</h2>
+                </div>
                 <ListGroup variant='flush'>
                     {
                         filtered

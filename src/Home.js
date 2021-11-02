@@ -51,9 +51,6 @@ function Home() {
             </Col>
           </Row>
           <Row>
-            <div style={{textAlign: 'left'}}>
-              <h2>ramen list</h2>
-            </div>
             <Col sm={4} style={{width: '100%', height: '40vh'}}>
                 <RamenList reviews={reviews} update={update} setText={setText}/>
             </Col>
