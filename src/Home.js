@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import useWindowDimensions from './useWindowDimensions';
+import ReactGA from 'react-ga';
 
 import RamenList from './RamenList';
 import RamenMap from './RamenMap';
 import ramenYaml from './ramen.yml';
+import useWindowDimensions from './useWindowDimensions';
 import yaml from 'js-yaml';
+
 
 function Home() {
     const DEFAULT_LAT = 37.7649439;
@@ -21,6 +23,11 @@ function Home() {
     const [text, setText] = useState(STARTING_TEXT);
 
     const {width} = useWindowDimensions();
+
+    useEffect(() => {
+      ReactGA.initialize('UA-210961017-1');
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }, [])
     
     useEffect(() => {
       if (reviews.length === 0) {

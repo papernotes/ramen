@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link} from "react-router-dom";
+import ReactGA from 'react-ga';
 
 function Faq() {
+    useEffect(() => {
+        ReactGA.initialize('UA-210961017-1');
+        ReactGA.pageview(window.location.pathname + window.location.search);
+      }, [])
+
     return(
         <div>
             <p>As a heads up, I do like strong/rich broths. A good egg will help.</p>
