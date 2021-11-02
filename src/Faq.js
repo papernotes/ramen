@@ -6,7 +6,7 @@ function Faq() {
     useEffect(() => {
         ReactGA.initialize('UA-210961017-1');
         ReactGA.pageview(window.location.pathname + window.location.search);
-      }, [])
+    }, [])
 
     return(
         <div>
