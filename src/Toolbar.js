@@ -13,7 +13,7 @@ function Toolbar() {
               </Link>
           </Navbar.Brand>
           <Navbar.Collapse className="justify-content-end">
-              <Link style={{textDecoration: 'none'}} to='/faq'>
+              <Link style={{textDecoration: 'none'}} to='/ramen/faq'>
                 <h3>faq</h3>
               </Link>
           </Navbar.Collapse>
