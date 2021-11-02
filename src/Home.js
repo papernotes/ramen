@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import useWindowDimensions from './useWindowDimensions';
 
 import RamenList from './RamenList';
 import RamenMap from './RamenMap';
@@ -18,6 +19,8 @@ function Home() {
     const [reviews, setReviews] = useState([]);
     const [name, setName] = useState('hi');
     const [text, setText] = useState(STARTING_TEXT);
+
+    const {width} = useWindowDimensions();
     
     useEffect(() => {
       if (reviews.length === 0) {
@@ -36,25 +39,45 @@ function Home() {
         setText(txt);
       }
 
+    if (width <= 580) {
+      return (
+        <Container>
+          <Row>
+            <Col sm={8} style={{height: '40vh'}}>
+              <div style={{whiteSpace:'break-spaces', textAlign: 'left'}}>
+                    <h1>{name}</h1>
+                    <p>{text}</p>
+                    </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={4} style={{width: '100%', height: '40vh'}}>
+                <RamenList reviews={reviews} update={update} setText={setText}/>
+            </Col>
+          </Row>
+        </Container>
+      )
+    }
+
     return(
         <Container style={{maxWidth: '85vw'}}>
             <Row>
-            <Col sm={4} style={{maxHeight: '80vh'}}>
-                <RamenList reviews={reviews} update={update} setText={setText}/>
-            </Col>
-            <Col sm={8} style={{height: '100%'}}>
-                <RamenMap
-                reviews={reviews}
-                defaultCenter={[DEFAULT_LAT, DEFAULT_LNG]}
-                lat={lat}
-                lng={lng}
-                update={update}
-                />
-                <div style={{whiteSpace:'break-spaces'}}>
-                <h1>{name}</h1>
-                <p>{text}</p>
-                </div>
-            </Col>
+              <Col sm={4} style={{maxHeight: '80vh'}}>
+                  <RamenList reviews={reviews} update={update} setText={setText}/>
+              </Col>
+              <Col sm={8} style={{height: '100%'}}>
+                  <RamenMap
+                    reviews={reviews}
+                    defaultCenter={[DEFAULT_LAT, DEFAULT_LNG]}
+                    lat={lat}
+                    lng={lng}
+                    update={update}
+                  />
+                  <div style={{whiteSpace:'break-spaces'}}>
+                    <h1>{name}</h1>
+                    <p>{text}</p>
+                  </div>
+              </Col>
             </Row>
         </Container>
     );
